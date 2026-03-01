@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source "../../../pages/**/*.php";
+@source "../../../accounts/**/*.php";
+@source "../../../admin/**/*.php";
+@source "../../**/*.php";
+@source "../../../src/**/*.php";
+
+@theme {
+  --color-indigo: #1e0e62;
+  --color-lavender: #f5f3ff;
+  --color-dark-bg: #0f0a2e;
+}

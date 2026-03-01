@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteBase /banking/
+
+# deny access to dotfiles
+RewriteRule (^\.|/\.) - [F]
+
+# deny access to sensitive directories
+RewriteRule ^(src|config|database|logs|uploads)/ - [F]
+
+# serve existing files directly
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
